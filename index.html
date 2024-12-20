@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Dice Roll</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .dice-container {
+            margin-top: 50px;
+        }
+        .dice-image {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .roll-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .roll-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chess Dice Roll</h1>
+    <p>Click the button to roll the dice and see which chess piece is selected!</p>
+
+    <div class="dice-container">
+        <div class="dice-image">
+            <img id="diceImage" src="" alt="Dice Face" width="150" height="150">
+        </div><br>
+        <button class="roll-button" onclick="rollDice()">Roll Dice</button>
+    </div>
+
+    <script>
+        function rollDice() {
+            const diceNumber = Math.floor(Math.random() * 6) + 1;
+
+            // Update the dice image source
+            const diceImage = document.getElementById('diceImage');
+            diceImage.src = `${diceNumber}.png`;
+        }
+    </script>
+</body>
+</html>
